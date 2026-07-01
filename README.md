@@ -1,4 +1,4 @@
-# Rahma Elsadek — Portfolio
+#  Portfolio
 
 A production-ready portfolio website for Rahma Elsadek, English Language Teacher,
 built with **React 19 + Vite + JavaScript (no TypeScript)**.
