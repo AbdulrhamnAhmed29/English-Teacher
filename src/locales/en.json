@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "about": "About",
+    "journey": "Journey",
+    "strengths": "Strengths",
+    "philosophy": "Philosophy",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Rahma Elsadek — English Language Teacher",
+    "title_line1": "Helping Children Learn, Grow, and Communicate in English",
+    "title_highlight": "By Rahma",
+    "title_line2": "",
+    "subtitle": "I'm Rahma Elsadek — a kindergarten English teacher who turns first words into first steps of confidence.",
+    "cta_primary": "View my journey",
+    "cta_secondary": "Get in touch",
+    "badge": "1 year teaching young learners"
+  },
+  "about": {
+    "eyebrow": "About Me",
+    "title": "1 year teaching young learners",
+    "body": "I began my career as a Student of the Accounting Institute — but my heart kept pulling me toward classrooms, That passion for teaching children and language led me to leave accounting behind and build a new career around what I love most: helping young learners fall in love with English.",
+    "quote": "Numbers taught me precision. Children taught me patience. Together, they made me the teacher I am today."
+  },
+  "journey": {
+    "eyebrow": "My Journey",
+    "title": "Education & Experience",
+    "education_label": "Education",
+    "experience_label": "Experience",
+    "items": {
+      "accounting": {
+        "title": "Accounting Institute",
+        "detail": "Graduated with a foundation in accounting before transitioning toward education."
+      },
+      "english_course": {
+        "title": "English Language Course",
+        "detail": "Cairo University"
+      },
+      "diploma": {
+        "title": "English Teaching Diploma",
+        "detail": "Ain Shams University"
+      },
+      "kindergarten": {
+        "title": "English Teacher, Kindergarten Academy",
+        "detail": "One year of hands-on classroom experience teaching young learners.",
+        "responsibilities": [
+          "Teaching English to young learners",
+          "Helping children build strong English foundations",
+          "Organizing educational activities and games",
+          "Supporting student development",
+          "Communicating with parents"
+        ]
+      }
+    }
+  },
+  "Certificates": {
+    "eyebrow": "Qualifications",
+    "title": "Certificates & Achievements",
+    "description": "Professional training and certifications that support my journey as an English Teacher.",
+    "items": {
+      "english_course": {
+        "title": "English Language Course",
+        "detail": "Cairo University",
+        "description": "Completed a comprehensive English language program focused on communication and language development."
+      },
+      "diploma": {
+        "title": "English Teaching Diploma",
+        "detail": "Ain Shams University",
+        "description": "Specialized training in teaching methodologies, classroom management, and child-centered education."
+      }
+    }
+  },
+  "strengths": {
+    "eyebrow": "Teaching Strengths",
+    "title": "What I bring to the classroom.",
+    "items": {
+      "patient": {
+        "title": "Patient with Children",
+        "detail": "Every child learns at their own pace, and I meet them there."
+      },
+      "management": {
+        "title": "Strong Classroom Management",
+        "detail": "A calm, structured space where children feel safe to participate."
+      },
+      "creative": {
+        "title": "Creative Learning Activities",
+        "detail": "Games and activities that make English lessons memorable."
+      },
+      "child_centered": {
+        "title": "Child-Centered Approach",
+        "detail": "Lessons designed around how children actually learn best."
+      },
+      "positive": {
+        "title": "Positive Learning Environment",
+        "detail": "Encouragement first, so confidence grows alongside vocabulary."
+      }
+    }
+  },
+  "philosophy": {
+    "eyebrow": "Teaching Philosophy",
+    "quote": "My goal is to help every child enjoy learning English and gain confidence in using the language.",
+    "signature": "— Rahma Elsadek"
+  },
+  "contact": {
+    "eyebrow": "Let's Work Together",
+    "title": "Hiring for your school?",
+    "body": "I'd love to talk about how I can help your youngest students build confidence in English from day one.",
+    "cta_email": "Email Me",
+    "cta_call": "Call Me",
+    "footer_note": "Available for kindergarten & early-years English teaching positions."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
