@@ -2,93 +2,90 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { Button } from "../../../shared/components/ui/Button";
-import { StarMark } from "../../../shared/components/ui/StarMark";
 
-/**
- * Hero / opening section. Leads with Rahma's teaching philosophy in her
- * own words rather than a generic stat block, since the thing that
- * distinguishes her is the human quality of her teaching, not a metric.
- */
 export function Hero() {
   const { t } = useTranslation();
 
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-cream-100 bg-notebook-lines px-6 pb-24 pt-20 sm:pt-28"
+      className="relative overflow-hidden bg-black px-6 py-24 lg:py-32"
     >
-      <StarMark className="pointer-events-none absolute right-[8%] top-24 h-16 w-16 text-gold-500/70 animate-float-slow hidden sm:block" />
+      {/* Background Glow */}
+      <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl" />
+      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-yellow-300/10 blur-3xl" />
 
-      <div className="mx-auto flex max-w-4xl flex-col items-start gap-8">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 rounded-full border border-ink-800/15 bg-cream-50 px-4 py-1.5 font-mono text-xs uppercase tracking-wide text-ink-600"
-        >
-          {t("hero.eyebrow")}
-        </motion.span>
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
+        {/* Content */}
+        <div>
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex rounded-full border border-yellow-500/20 bg-yellow-500/10 px-4 py-2 text-sm font-medium tracking-widest text-yellow-500 uppercase"
+          >
+            {t("hero.eyebrow")}
+          </motion.span>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-display text-4xl font-medium leading-[1.08] text-ink-900 sm:text-5xl md:text-6xl"
-        >
-          {t("hero.title_line1")}{" "}
-          <span className="relative inline-block text-coral-500">
-            {t("hero.title_highlight")}
-            <svg
-              viewBox="0 0 200 20"
-              className="absolute -bottom-1 left-0 w-full text-coral-400"
-              preserveAspectRatio="none"
-              aria-hidden="true"
+          <motion.h1
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mt-6 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl"
+          >
+            {t("hero.title_line1")}
+            <span className="block bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-500 bg-clip-text text-transparent">
+              {t("hero.title_highlight")}
+            </span>
+            {t("hero.title_line2")}
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300"
+          >
+            {t("hero.subtitle")}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mt-8 flex flex-wrap gap-4"
+          >
+            <Button
+              href="#journey"
+              variant="primary"
+              icon={<ArrowDown size={18} />}
             >
-              <path
-                d="M2 14 C 50 4, 150 4, 198 14"
-                stroke="currentColor"
-                strokeWidth="4"
-                fill="none"
-                strokeLinecap="round"
-                strokeDasharray="300"
-                className="animate-draw-underline"
-              />
-            </svg>
-          </span>{" "}
-          {t("hero.title_line2")}
-        </motion.h1>
+              {t("hero.cta_primary")}
+            </Button>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-xl font-body text-lg text-ink-600"
-        >
-          {t("hero.subtitle")}
-        </motion.p>
+            <Button
+              href="#contact"
+              variant="secondary"
+              icon={<Mail size={18} />}
+            >
+              {t("hero.cta_secondary")}
+            </Button>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center gap-4"
-        >
-          <Button href="#journey" variant="primary" icon={<ArrowDown size={16} />}>
-            {t("hero.cta_primary")}
-          </Button>
-          <Button href="#contact" variant="secondary" icon={<Mail size={16} />}>
-            {t("hero.cta_secondary")}
-          </Button>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="mt-8 flex items-center gap-3"
+          >
+            <div className="h-3 w-3 rounded-full bg-green-500" />
+            <span className="text-sm text-gray-400">
+              Available for Teaching Opportunities
+            </span>
+          </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-2 flex items-center gap-2 font-hand text-2xl text-ink-600"
-        >
-          <span aria-hidden="true">✎</span> {t("hero.badge")}
-        </motion.div>
+  
       </div>
     </section>
   );

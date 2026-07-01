@@ -5,87 +5,119 @@ import { Menu, X } from "lucide-react";
 import { LanguageSwitch } from "../../shared/components/ui/LanguageSwitch";
 import { useActiveSection } from "../../shared/hooks/useActiveSection";
 
-const SECTION_IDS = ["about", "journey", "strengths", "philosophy", "contact"];
+const SECTION_IDS = [
+  "about",
+  "journey",
+  "strengths",
+  "philosophy",
+  "contact",
+];
 
-/**
- * Sticky top navigation with scroll-spy active-link highlighting
- * and a mobile menu.
- */
 export function Navbar() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const activeId = useActiveSection(SECTION_IDS);
 
-  const links = SECTION_IDS.map((id) => ({ id, label: t(`nav.${id}`) }));
-  const handleClose = () => {
+  const links = SECTION_IDS.map((id) => ({
+    id,
+    label: t(`nav.${id}`),
+  }));
+
+  const handleLinkClick = (id) => {
     setTimeout(() => {
-      setIsOpen(false)
-    }, 200)
-  }
+      setIsOpen(false);
+    }, 200);
+  };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink-800/10 bg-cream-100/85 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#hero" className="font-display text-lg font-semibold text-ink-900">
-          Rahma <span className="text-coral-500">Elsadek</span>
-        </a>
+    <header className="sticky top-0 z-50 border-b border-yellow-500/10 bg-black/80 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <button
+          onClick={() => handleLinkClick("hero")}
+          className="font-display text-xl font-semibold text-white"
+        >
+          Rahma{" "}
+          <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+            Elsadek
+          </span>
+        </button>
 
+        {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
           {links.map(({ id, label }) => (
-            <a
+            <button
               key={id}
-              href={`#${id}`}
-              className={`relative font-body text-sm transition-colors duration-200 ${activeId === id ? "text-ink-900 font-semibold" : "text-ink-800/60 hover:text-ink-900"
-                }`}
+              onClick={() => handleLinkClick(id)}
+              className={`relative text-sm transition-all duration-300 ${
+                activeId === id
+                  ? "font-semibold text-yellow-500"
+                  : "text-gray-300 hover:text-white"
+              }`}
             >
               {label}
+
               {activeId === id && (
                 <motion.span
-                  layoutId="nav-underline"
-                  className="absolute -bottom-1 left-0 right-0 h-[2px] bg-coral-500"
+                  layoutId="active-nav"
+                  className="absolute -bottom-2 left-0 right-0 h-[2px] bg-yellow-500"
                 />
               )}
-            </a>
+            </button>
           ))}
         </div>
 
+        {/* Desktop Language Switch */}
         <div className="hidden md:block">
           <LanguageSwitch />
         </div>
 
+        {/* Mobile Menu Button */}
         <button
           type="button"
-          className="text-ink-900 md:hidden"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Toggle menu"
+          aria-label="Toggle Menu"
           aria-expanded={isOpen}
+          onClick={() => setIsOpen((prev) => !prev)}
+          className="text-white md:hidden"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{
+              opacity: 1,
+              height: "auto",
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+            }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-ink-800/10 md:hidden"
+            className="overflow-hidden border-t border-yellow-500/10 bg-black md:hidden"
           >
-            <div className="flex flex-col gap-4 px-6 py-5">
+            <div className="flex flex-col gap-5 px-6 py-5">
               {links.map(({ id, label }) => (
-                <a
+                <button
                   key={id}
-                  href={`#${id}`}
-                  onClick={handleClose}
-                  className="font-body text-sm text-ink-800"
+                  onClick={() => handleLinkClick(id)}
+                  className={`text-left text-sm transition-colors ${
+                    activeId === id
+                      ? "font-medium text-yellow-500"
+                      : "text-gray-300"
+                  }`}
                 >
                   {label}
-
-                </a>
+                </button>
               ))}
-              <LanguageSwitch className="self-start" />
+
+              <div className="pt-2">
+                <LanguageSwitch />
+              </div>
             </div>
           </motion.div>
         )}

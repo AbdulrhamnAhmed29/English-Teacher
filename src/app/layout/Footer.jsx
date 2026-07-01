@@ -1,31 +1,57 @@
 import { useTranslation } from "react-i18next";
 import { Mail, Phone, Heart } from "lucide-react";
 
-/**
- * Simple, warm footer with contact glance and copyright line.
- */
 export function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-ink-800/10 bg-ink-900 py-10 text-cream-100">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-center">
-        <p className="font-display text-xl">
-          Rahma <span className="text-coral-300">Elsadek</span>
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-6 font-body text-sm text-cream-100/70">
-          <a href="mailto:rahma.elsadek@example.com" className="flex items-center gap-2 hover:text-cream-50">
-            <Mail size={16} /> rahma.elsadek@example.com
-          </a>
-          <a href="tel:+201000000000" className="flex items-center gap-2 hover:text-cream-50">
-            <Phone size={16} /> +20 100 000 0000
-          </a>
+    <footer className="relative overflow-hidden border-t border-yellow-500/10 bg-black">
+      {/* Glow */}
+      <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/5 to-transparent" />
+
+      <div className="relative mx-auto max-w-7xl px-6 py-12">
+        <div className="flex flex-col items-center gap-6 text-center">
+          {/* Name */}
+          <h3 className="text-2xl font-semibold text-white">
+            Rahma{" "}
+            <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+              Elsadek
+            </span>
+          </h3>
+
+          {/* Contact */}
+          <div className="flex flex-col items-center gap-4 md:flex-row md:gap-8">
+            <a
+              href="mailto:rahmaalsadek459@gmail.com"
+              className="flex items-center gap-2 text-gray-400 transition-colors hover:text-yellow-500"
+            >
+              <Mail size={16} />
+              <span>rahmaalsadek459@gmail.com</span>
+            </a>
+
+            <a
+              href="tel:+201035385399"
+              className="flex items-center gap-2 text-gray-400 transition-colors hover:text-yellow-500"
+            >
+              <Phone size={16} />
+              <span>+20 103 538 5399</span>
+            </a>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px w-32 bg-gradient-to-r from-transparent via-yellow-500 to-transparent" />
+
+          {/* Copyright */}
+          <p className="flex items-center gap-2 text-sm text-gray-500">
+            © {year} Rahma Elsadek — {t("footer.rights")}
+            <Heart
+              size={14}
+              className="text-yellow-500"
+              fill="currentColor"
+            />
+          </p>
         </div>
-        <p className="flex items-center gap-1.5 font-mono text-xs text-cream-100/50">
-          © {year} Rahma Elsadek — {t("footer.rights")}
-          <Heart size={12} className="text-coral-300" fill="currentColor" />
-        </p>
       </div>
     </footer>
   );
