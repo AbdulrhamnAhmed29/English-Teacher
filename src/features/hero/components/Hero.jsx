@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-black px-6 py-24 lg:py-32"
+      className="relative overflow-hidden bg-black px-2 py-10 lg:py-32"
     >
       {/* Background Glow */}
       <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-yellow-500/10 blur-3xl" />
@@ -31,7 +31,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mt-6 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl"
+            className="mt-6 text-4xl font-bold leading-tight text-white md:text-6xl lg:text-7xl"
           >
             {t("hero.title_line1")}
             <span className="block bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-500 bg-clip-text text-transparent">

@@ -45,7 +45,7 @@ export function Philosophy() {
               delay: 0.2,
               duration: 0.8,
             }}
-            className="text-center text-3xl font-medium leading-relaxed text-white md:text-5xl"
+            className="text-center text-2xl font-medium leading-relaxed text-white md:text-5xl"
           >
             “{t("philosophy.quote")}”
           </motion.blockquote>
